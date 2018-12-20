@@ -70,9 +70,9 @@ module.exports = router => {
         console.log(firstname);
         const lastname = req.body.lastname;
         console.log(lastname);
-        const phonenumber = parseInt(req.body.phonenumber);
+        const phonenumber = "1234567890";
         console.log(phonenumber);
-        const dateofbirth = req.body.dateofbirth;
+        const dateofbirth = "01/12/1995";
         console.log(dateofbirth);
         const email = req.body.email;
         console.log(email);
@@ -102,14 +102,11 @@ module.exports = router => {
             registerUser
                 .registerUser(firstname, lastname, phonenumber,dateofbirth,email,password, retypepassword,usertype,userId)
                 .then(result => {
-
                     res.send({
                         "message": "user has been registered successfully",
                         "status": true,
 
-
                     });
-
 
                 })
                 .catch(err => res.status(err.status).json({
